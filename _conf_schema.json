@@ -1,0 +1,62 @@
+{
+  "unit_settings": {
+    "description": "显示单位与精度设置",
+    "type": "object",
+    "hint": "配置测速结果的展示方式",
+    "items": {
+      "round_precision": {
+        "description": "周回数保留小数位数",
+        "type": "int",
+        "hint": "计算每小时周回数时保留的小数点位数",
+        "default": 1
+      },
+      "show_timestamp": {
+        "description": "显示记录时间点",
+        "type": "bool",
+        "hint": "是否在每次记录时显示具体的系统时间（如 14:30:00）",
+        "default": true
+      }
+    }
+  },
+  "session_timeout": {
+    "description": "自动重置超时(秒)",
+    "type": "int",
+    "hint": "如果两次 /cs 指令间隔超过此时间，下次发送将自动开启新一轮计时。设置为 0 则不自动重置。",
+    "default": 3600
+  },
+  "report_style": {
+    "description": "报告渲染模式",
+    "type": "string",
+    "hint": "选择总结报告的输出样式",
+    "default": "text",
+    "options": [
+      "text",
+      "markdown"
+    ]
+  },
+  "max_records_per_session": {
+    "description": "单次最大记录数",
+    "type": "int",
+    "hint": "防止内存占用过大，单次测速会话允许记录的最大次数点",
+    "default": 100
+  },
+  "custom_prompts": {
+    "description": "自定义提示语配置",
+    "type": "object",
+    "hint": "自定义插件返回的文本话术",
+    "items": {
+      "start_msg": {
+        "description": "开始记录提示",
+        "type": "string",
+        "default": "测速开始！已记录起始时间点。",
+        "hint": "第一次发送 /cs 时的回复"
+      },
+      "stop_msg": {
+        "description": "结束记录提示",
+        "type": "string",
+        "default": "测速已停止。本次统计报告：",
+        "hint": "发送 /cse 时的标题回复"
+      }
+    }
+  }
+}

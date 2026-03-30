@@ -1,0 +1,5 @@
+name: astrbot_plugin_speedometer
+author: AstrBot-Assistant
+description: 提供测速与周回计算功能。使用 /cs 开始或记录时间点，返回与上次记录的时间差及每小时周回数；使用 /cse 停止并返回所有记录的总结报告。
+version: 1.0.0
+repo: https://github.com/yourname/astrbot_plugin_speedometer
